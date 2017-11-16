@@ -5,14 +5,6 @@ var map_height = canvas.height = canvas.scrollHeight = 640;
 var player_sprite = new Image();
 var player = undefined;
 var keys = [];
-var KEY_RIGHT = 39;
-var KEY_LEFT = 37;
-var KEY_UP = 38;
-var KEY_DOWN = 40;
-var KEY_A = 65;
-var KEY_D = 68;
-var KEY_S = 83;
-var KEY_W = 87;
 var keysBool = {
     up: false,
     down: false,

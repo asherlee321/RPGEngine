@@ -99,5 +99,5 @@ function KeyReleased(event)
 }
 
 window.addEventListener("load",Start);
-window.addEventListener("keypress",KeyReleased);
+window.addEventListener("keyup",KeyReleased);
 window.addEventListener("keydown",KeyPressed);

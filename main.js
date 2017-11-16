@@ -64,16 +64,16 @@ function KeyPressed(event)
 {
     //keys[event.keyCode] = true;
     switch(event.keyCode){
-        case KEYS_UP:
+        case 38:
             keysBool.up = true;
             break;
-        case KEYS_DOWN:
+        case 40:
             keysBool.down = true;
             break;
-        case KEYS_LEFT:
+        case 37:
             keysBool.left = true;
             break;
-        case KEYS_RIGHT:   
+        case 39:   
             keysBool.right = true;
             break;    
     }
@@ -83,16 +83,16 @@ function KeyReleased(event)
 {
     //keys[event.keyCode] = false;
     switch(event.keyCode){
-        case KEYS_UP:
+        case 38:
             keysBool.up = false;
             break;
-        case KEYS_DOWN:
+        case 40:
             keysBool.down = false;
             break;
-        case KEYS_LEFT:
+        case 37:
             keysBool.left = false;
             break;
-        case KEYS_RIGHT:   
+        case 39:   
             keysBool.right = false;
             break;    
     }

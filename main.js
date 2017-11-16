@@ -5,6 +5,12 @@ var map_height = canvas.height = canvas.scrollHeight = 640;
 var player_sprite = new Image();
 var player = undefined;
 var keys = [];
+var keysBool = {
+    up: false,
+    down: false,
+    right: false,
+    left: false
+}
 
 function Player(x,y,hspeed,vspeed)
 {
@@ -16,19 +22,19 @@ function Player(x,y,hspeed,vspeed)
     }
     this.update = function()
     {
-        if(keys[KEY_RIGHT] || keys[KEY_D])
+        if(keysBool.right)
         {
             this.x += this.velocity.x;
         }
-        if(keys[KEY_LEFT] || keys[KEY_A])
+        if(keysBool.left)
         {
             this.x -= this.velocity.x;
         }
-        if(keys[KEY_UP] || keys[KEY_W])
+        if(keysBool.up)
         {
             this.y -= this.velocity.y;
         }
-        if(keys[KEY_DOWN] || keys[KEY_S])
+        if(keysBool.down)
         {
             this.y += this.velocity.y;
         }
@@ -56,12 +62,40 @@ function Update()
 
 function KeyPressed(event)
 {
-    keys[event.keyCode] = true;
+    //keys[event.keyCode] = true;
+    switch(event.keyCode){
+        case KEYS_UP:
+            keysBool.up = true;
+            break;
+        case KEYS_DOWN:
+            keysBool.down = true;
+            break;
+        case KEYS_LEFT:
+            keysBool.left = true;
+            break;
+        case KEYS_RIGHT:   
+            keysBool.right = true;
+            break;    
+    }
 }
 
 function KeyReleased(event)
 {
-    keys[event.keyCode] = false;
+    //keys[event.keyCode] = false;
+    switch(event.keyCode){
+        case KEYS_UP:
+            keysBool.up = false;
+            break;
+        case KEYS_DOWN:
+            keysBool.down = false;
+            break;
+        case KEYS_LEFT:
+            keysBool.left = false;
+            break;
+        case KEYS_RIGHT:   
+            keysBool.right = false;
+            break;    
+    }
 }
 
 window.addEventListener("load",Start);
